@@ -1,12 +1,28 @@
 package com.alkathirikhalid.gcm;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
 
 public class MainActivity extends ActionBarActivity {
+
+    private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+
+    String SENDER_ID = "452472803957";
+
+
+    static final String TAG = "L2C";
+
+    GoogleCloudMessaging gcm;
+    SharedPreferences prefs;
+    Context context;
+    String regid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
